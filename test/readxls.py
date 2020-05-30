@@ -16,14 +16,15 @@ def readxls():
     print(rows)
     print(cols)
 
+    #ctype : 0 empty,1 string, 2 number, 3 date, 4 boolean, 5 error
     cell_A = sheet2.cell(1,1).value #取出第二行第二列值
-    print(cell_A) #输出这个值
+    print(sheet2.cell(1,1).ctype,cell_A) #输出这个值
 
     cell_B = sheet2.cell(1,2).value #取出第二行第三列值
-    print(cell_B) #输出这个值
+    print(sheet2.cell(1,2).ctype,cell_B) #输出这个值
 
     cell_C = sheet2.cell(2,1).value #取出第三行第二列值
-    print(cell_C) #输出这个值
+    print(sheet2.cell(2,1).ctype,cell_C) #输出这个值
 
 readxls()
 #if __name__ == '__main__':
