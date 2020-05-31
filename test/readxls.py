@@ -2,7 +2,7 @@ import xlrd #xlrd是读excel
 import xlwt #xlwt是写excel的库
 
 def readxls():
-    workbook = xlrd.open_workbook(r'books.xls') #G:\python\test\books.xls
+    workbook = xlrd.open_workbook(r'books.xls',formatting_info=True) #要获得合并单元格，读取文件的时候需要将formatting_info参数设置为True，默认是False
     print(workbook.sheet_names()) #输出标签名称
     #sheet2 = workbook.sheet_by_index(0) #打开第一个标签
     sheet2 = workbook.sheet_by_name('A')  # 打开标签'A'
@@ -25,6 +25,13 @@ def readxls():
 
     cell_C = sheet2.cell(2,1).value #取出第三行第二列值
     print(sheet2.cell(2,1).ctype,cell_C) #输出这个值
+
+    #找到合并的单元格并打印
+    print(sheet2.merged_cells)
+
+    #获取merge_cells返回的row和col低位的索引即可
+    for (rlow,rhigh,clow,chigh) in sheet2.merged_cells:
+        print(sheet2.cell(rlow,clow).value)
 
 if __name__ == '__main__':
     readxls()
