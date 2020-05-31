@@ -26,6 +26,5 @@ def readxls():
     cell_C = sheet2.cell(2,1).value #取出第三行第二列值
     print(sheet2.cell(2,1).ctype,cell_C) #输出这个值
 
-readxls()
-#if __name__ == '__main__':
-#    readxls()
+if __name__ == '__main__':
+    readxls()
