@@ -34,7 +34,7 @@ def write_excel():
       sheet1
     '''
     sheet1 = f.add_sheet(u'sheet1', cell_overwrite_ok=True)  # 创建sheet
-    row0 = [u'业务', u'状态', u'北京', u'上海', u'广州', u'深圳', u'状态小计', u'合计']
+    row0 = [u'业务', u'状态', u'北京', u'上海', u'广州', u'深圳', u'状态小计', u'合计'] #使用unicode
     column0 = [u'机票', u'船票', u'火车票', u'汽车票', u'其它']
     status = [u'预订', u'出票', u'退票', u'业务小计']
 
@@ -62,9 +62,7 @@ def write_excel():
     #f.save('demo1.xlsx')  # 保存文件，保存xlsx提示文件后缀名错误
     f.save('demo1.xls') # 保存文件，保存为xls后缀就好了
 
-write_excel()
-
-#if __name__ == '__main__':
+if __name__ == '__main__':
 #    # generate_workbook()
 #    # read_excel()
-#    write_excel()
+    write_excel()
