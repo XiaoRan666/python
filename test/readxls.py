@@ -2,7 +2,7 @@ import xlrd #xlrd是读excel
 import xlwt #xlwt是写excel的库
 
 def readxls():
-    workbook = xlrd.open_workbook(r'G:\python\test\books.xls')
+    workbook = xlrd.open_workbook(r'books.xls') #G:\python\test\books.xls
     print(workbook.sheet_names()) #输出标签名称
     #sheet2 = workbook.sheet_by_index(0) #打开第一个标签
     sheet2 = workbook.sheet_by_name('A')  # 打开标签'A'
